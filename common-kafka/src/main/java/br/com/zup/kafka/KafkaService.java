@@ -36,6 +36,7 @@ class KafkaService<T> implements Closeable {
     }
 
     void run() {
+        //noinspection InfiniteLoopStatement
         while(true){
             var records = consumer.poll(Duration.ofMillis(100));
             if(!records.isEmpty()){
